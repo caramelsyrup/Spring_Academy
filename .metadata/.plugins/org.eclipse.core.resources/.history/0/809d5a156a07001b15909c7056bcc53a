@@ -1,0 +1,9 @@
+package com.test.controller;
+
+import org.springframework.stereotype.Controller;
+
+// controller를 어노테이션 해서 쓴다. 이전에는 쓰레드 핸들러, 컨트롤러를 상속받아서 처리했음. servlet.xml파일에서 context먼저 추가하고,
+@Controller
+public class TestController {
+
+}

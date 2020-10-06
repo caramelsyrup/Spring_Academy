@@ -1,0 +1,5 @@
+package com.person.model;
+
+public interface PersonDAO {
+	public void personInsert(Person DAO);
+}

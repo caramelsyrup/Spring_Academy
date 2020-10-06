@@ -1,0 +1,74 @@
+package com.person.model;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
+
+// 레파지토리를 등록하여, 오토와이어드와 연결. spring container에 등록이 됨.
+@Repository
+public class PersonDAOImpl implements PersonDAO {
+	
+	// 스프링에 있는 jdbc의 템플렛을 그대로 사용하기 위해서, template 변수 선언. spring container와 연결
+	@Autowired
+	private JdbcTemplate template;
+	// 해당 변수를 세터 해준다.
+	public void setTemplate(JdbcTemplate template) {
+		this.template = template;
+	}
+	// 추가
+	@Override
+	public void perInsert(Person p) {
+		// sql문 작성. DB 실행을 위해서
+		String sql = "INSERT INTO person VALUES (?,?,?,?,?)";
+		// param 배열을 만들어서 sql문의 ?에 넣을 데이터를 빈클래스로부터 get함. 순서
+		Object[] param = new Object[]{
+			p.getId(), p.getName(),p.getPassword(),p.getGender(),p.getJob()
+		};
+		// template을 참조하여 update 메소드를 실행. 매개변수로 sql문과 param 객체 배열을 이용.실행.
+		template.update(sql, param);
+	}
+	
+	// 전체보기
+	@Override
+	public List<Person> perList() {
+		String sql = "SELECT * FROM person";
+		
+		template.query(sql, new RowMapper() {
+
+			@Override
+			public Object mapRow(ResultSet arg0, int arg1) throws SQLException {
+				
+				return null;
+			}
+			
+		});
+		return null;
+	}
+	
+	// 수정
+	@Override
+	public void perUpdate(Person p) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	// 삭제
+	@Override
+	public void perDelete(String id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	// 상세보기
+	@Override
+	public Person perView(String id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

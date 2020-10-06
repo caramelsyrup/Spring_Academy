@@ -1,0 +1,9 @@
+package com.person.model;
+
+public class Person {
+	private String id;
+	private String password;
+	private String name;
+	private String gender;
+	private String job;
+}

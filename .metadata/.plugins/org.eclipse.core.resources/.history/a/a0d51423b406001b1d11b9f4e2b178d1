@@ -1,0 +1,9 @@
+package com.person.model;
+
+public class PersonDTO {
+	private String id;
+	private String id;
+	private String id;
+	private String id;
+	private String id;
+}

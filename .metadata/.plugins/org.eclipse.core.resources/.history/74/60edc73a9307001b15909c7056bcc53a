@@ -1,0 +1,11 @@
+package com.member.model;
+
+public interface MemberDAO {
+	
+	// 전체보기
+	// 상세보기
+	// 추가하기
+	// 수정하기
+	// 삭제하기
+
+}

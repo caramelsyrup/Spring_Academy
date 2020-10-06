@@ -1,0 +1,5 @@
+package com.member.model;
+
+public class MemberDTO {
+	private String id,pass,name,addr,memo,reg_date;
+}

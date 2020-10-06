@@ -1,0 +1,5 @@
+package com.person.controller;
+
+public class updateForm extends AbstractMethodError {
+	
+}
