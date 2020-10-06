@@ -65,27 +65,21 @@ public class MemberController  {
 	public String delete(String id) {
 		// dao의 메소드 실행
 		dao.delete(id);
-		// 해당 경로로 이동
 		return "redirect:member_list.me";
 	}
 	
-	// 수정하기 get방식은 폼으로 이동
+	// 수정하기 get방식은 폼으로.
 	@RequestMapping(value = "member_update.me",method = RequestMethod.GET)
 	public String update(Model m, String id) {
-		// dao메소드를 이용해서 입력된 id와 관련된 데이터만 저장.
 		MemberDTO user = dao.findById(id);
-		// 모델 객체에 추가.
 		m.addAttribute("user",user);
-		// 해당 파일로 이동
 		return "updateForm";	
 	}
 	
 	// 수정하기 post방식은 메소드 실행. 리스트화면으로,
 	@RequestMapping(value = "member_update.me",method = RequestMethod.POST)
 	public String update(Model m, MemberDTO user) {
-		// DTO객체에 있는 정보를 해당 메소드에 이용하여, 실행.
 		dao.update(user);
-		// 해당 경로로 이동.
 		return "redirect:member_list.me";
 	}
 	

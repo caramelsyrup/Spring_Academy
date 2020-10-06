@@ -83,9 +83,7 @@ public class MemberController  {
 	// 수정하기 post방식은 메소드 실행. 리스트화면으로,
 	@RequestMapping(value = "member_update.me",method = RequestMethod.POST)
 	public String update(Model m, MemberDTO user) {
-		// DTO객체에 있는 정보를 해당 메소드에 이용하여, 실행.
 		dao.update(user);
-		// 해당 경로로 이동.
 		return "redirect:member_list.me";
 	}
 	
