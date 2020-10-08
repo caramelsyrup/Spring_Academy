@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="com.member.config.Member">
+ 	<!-- insert -->
+ 	<insert id="insertData" parameterType="com.member.model.MemberVO">
+ 		INSERT INTO springmember (id,pass,name,addr,memo,reg_date)
+ 		VALUES (#{id},#{pass},#{name},#{addr},#{memo},sysdate)
+ 	</insert>
+ 	<!-- select -->
+ 	<select id="selectData" resultType="com.member.model.MemberVO">
+ 		SELECT * FROM springmember
+ 	</select>
+ 	<!-- select(view) -->
+ 	<select id="viewData" parameterType="String" resultType="com.member.model.MemberVO">
+ 		SELECT * FROM springmember WHERE id = #{id}
+ 	</select>
+ 	<!-- update -->
+ 	<update id="updateData" parameterType="com.member.model.MemberVO">
+ 		UPDATE springmember SET pass=#{pass},name=#{name},addr=#{addr},memo=#{memo},reg_date=sysdate WHERE id =#{id}
+ 	</update>
+ 	<!-- delete -->
+ 	<delete id="deleteData" parameterType="String">
+ 		DELETE FROM springmember WHERE id = #{id}
+ 	</delete>
+ 	
+ </mapper>

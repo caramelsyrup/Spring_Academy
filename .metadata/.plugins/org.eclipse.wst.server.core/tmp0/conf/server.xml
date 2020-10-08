@@ -181,7 +181,21 @@
     <!--
     <Manager pathname="" />
     -->
-</Context></Host>
+</Context><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\review4" path="/review4" reloadable="true" source="org.eclipse.jst.jee.server:review4">
+
+    <!-- Default set of monitored resources. If one of these changes, the    -->
+    <!-- web application will be reloaded.                                   -->
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+     <Resource auth="Container" driverClassName="oracle.jdbc.driver.OracleDriver" loginTimeout="10" maxWait="5000" name="jdbc/spring" password="1234" type="javax.sql.DataSource" url="jdbc:oracle:thin:@localhost:1521:xe" username="scott"/>
+    
+
+    <!-- Uncomment this to disable session persistence across Tomcat restarts -->
+    <!--
+    <Manager pathname="" />
+    -->
+</Context><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Mybatis1" path="/Mybatis1" reloadable="true" source="org.eclipse.jst.jee.server:Mybatis1"/></Host>
     </Engine>
   </Service>
 </Server>
