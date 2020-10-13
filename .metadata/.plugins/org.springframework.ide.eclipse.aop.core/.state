@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="MemberMaven2"/>
+<aop-project name="Mybatis1"/>
+<aop-project name="MemberMaven"/>
 <aop-project name="review2"/>
 <aop-project name="review3"/>
+<aop-project name="review4"/>
 </aop-reference-model>

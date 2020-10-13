@@ -1,9 +1,0 @@
-package com.person.model;
-
-public class PersonDTO {
-	private String id;
-	private String name;
-	private String password;
-	private String gender;
-	private String job;
-}

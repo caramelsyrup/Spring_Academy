@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="review1" path="/review1" reloadable="true" source="org.eclipse.jst.jee.server:review1"/><Context docBase="review2" path="/review2" reloadable="true" source="org.eclipse.jst.jee.server:review2"/><Context docBase="review3" path="/review3" reloadable="true" source="org.eclipse.jst.jee.server:review3"/><Context docBase="review4" path="/review4" reloadable="true" source="org.eclipse.jst.jee.server:review4"/><Context docBase="Mybatis1" path="/Mybatis1" reloadable="true" source="org.eclipse.jst.jee.server:Mybatis1"/></Host>
+      <Context docBase="review1" path="/review1" reloadable="true" source="org.eclipse.jst.jee.server:review1"/><Context docBase="review2" path="/review2" reloadable="true" source="org.eclipse.jst.jee.server:review2"/><Context docBase="review3" path="/review3" reloadable="true" source="org.eclipse.jst.jee.server:review3"/><Context docBase="review4" path="/review4" reloadable="true" source="org.eclipse.jst.jee.server:review4"/><Context docBase="Mybatis1" path="/Mybatis1" reloadable="true" source="org.eclipse.jst.jee.server:Mybatis1"/><Context docBase="MemberMaven" path="/mymember" reloadable="true" source="org.eclipse.jst.jee.server:MemberMaven"/><Context docBase="MemberMaven2" path="/mytest" reloadable="true" source="org.eclipse.jst.jee.server:MemberMaven2"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -195,7 +195,7 @@
     <!--
     <Manager pathname="" />
     -->
-</Context><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Mybatis1" path="/Mybatis1" reloadable="true" source="org.eclipse.jst.jee.server:Mybatis1"/></Host>
+</Context><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\Mybatis1" path="/Mybatis1" reloadable="true" source="org.eclipse.jst.jee.server:Mybatis1"/><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MemberMaven" path="/mymember" reloadable="true" source="org.eclipse.jst.jee.server:MemberMaven"/><Context docBase="E:\JSP\SPRING\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\MemberMaven2" path="/mytest" reloadable="true" source="org.eclipse.jst.jee.server:MemberMaven2"/></Host>
     </Engine>
   </Service>
 </Server>

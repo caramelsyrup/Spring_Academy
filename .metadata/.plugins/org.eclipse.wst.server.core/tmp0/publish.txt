@@ -1,6 +1,7 @@
 #Tomcat publish data
-#Thu Oct 08 15:48:47 KST 2020
+#Tue Oct 13 16:33:38 KST 2020
 org.eclipse.jst.jee.server\:/binary\:E\:\\JSP\\SPRING\\Mybatis1\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:E\:\\JSP\\SPRING\\review2\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:E\:\\JSP\\SPRING\\review3\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
 org.eclipse.jst.jee.server\:/binary\:E\:\\JSP\\SPRING\\review4\\WebContent\\WEB-INF\\lib\\spring-web-4.0.4.RELEASE.jar=WEB-INF/lib/spring-web-4.0.4.RELEASE.jar
+org.eclipse.jst.jee.server\:/binary\:C\:\\Users\\admin\\.m2\\repository\\org\\springframework\\spring-web\\5.2.9.RELEASE\\spring-web-5.2.9.RELEASE.jar=WEB-INF/lib/spring-web-5.2.9.RELEASE.jar
