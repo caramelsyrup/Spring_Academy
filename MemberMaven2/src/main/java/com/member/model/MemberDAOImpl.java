@@ -1,5 +1,6 @@
 package com.member.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.ExecutorType;
@@ -24,9 +25,9 @@ public class MemberDAOImpl implements MemberDAO{
 	}
 
 	@Override
-	public List<MemberDTO> dao_list(String sqlId) {
+	public List<MemberDTO> dao_list(String sqlId,HashMap<String, String>hm) {
 		SqlSession sess = sqlMapper.openSession(ExecutorType.REUSE);
-		List<MemberDTO>list = sess.selectList(sqlId);
+		List<MemberDTO>list = sess.selectList(sqlId,hm);
 		sess.clearCache();
 		sess.close();
 		return list;

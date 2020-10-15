@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+			<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="jdbcUrl" value="jdbc:oracle:thin:@localhost:1521:XE"/>
+			<property name="username" value="scott"/>
+			<property name="password" value="1234"/>
+		</bean>
+		
+		<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
+			<constructor-arg ref="hikariConfig"/>
+		</bean>
+		
+		<bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+			<property name="dataSource" ref="dataSource"/>
+		</bean>
+		
+		<!-- 해당 부분은 주석 처리해도 실행에는 문제가 없다. 바로 연결이 되기 떄문에 -->
+<!-- 		<bean id="sqlMapper" class="org.mybatis.spring.SqlSessionTemplate">
+			<constructor-arg index="0" ref="sqlSessionFactoryBean"/>
+		</bean> -->
+		
+		<!-- Namespaces에서 mybatis-spring을 체크후, 해당 패키지에서 바로 연결 -->
+		<mybatis-spring:scan base-package="com.guest.mapper"/>
+		
+</beans>

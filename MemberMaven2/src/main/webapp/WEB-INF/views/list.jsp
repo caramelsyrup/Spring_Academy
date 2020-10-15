@@ -10,6 +10,7 @@
 <body>
 	<h1>전체보기</h1>
 	<a href="insert.my">회원 가입하기</a>
+	<form action="list">
 	<table style="border: 1px,thin,solid; border-color: blue;">
 		<thead>
 			<tr>
@@ -31,6 +32,25 @@
 				</tr>
 			</c:forEach>
 		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="2">
+					분류 : 
+					<select name="category">
+						<option>=선택=</option>
+						<option value="name">[이름]</option>
+						<option value="id">[아이디]</option>
+					</select>
+				</td>
+				<td colspan="2">
+					입력 : <input type="text" name="word">
+				</td>
+				<td>
+					<input type="submit" name="searchBtn" value="검색">
+				</td>
+			</tr>
+		</tfoot>
 	</table>
+	</form>
 </body>
 </html>

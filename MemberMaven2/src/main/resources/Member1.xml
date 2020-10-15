@@ -4,8 +4,17 @@
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
  <mapper namespace="com.member.Member1">
+ 
  	<select id="listData" resultType="com.member.model.MemberDTO">
  		SELECT * FROM springmember
+ 		<where>
+ 			<if test='word!=null and (category eq "name".toString())'>
+ 				name like '%'||#{word}||'%'
+ 			</if>
+ 			<if test='word!=null and (category eq "id".toString())'>
+ 				id like '%'||#{word}||'%'
+ 			</if>
+ 		</where>
  	</select>
  	<insert id="insertData" parameterType="com.member.model.MemberDTO">
  		INSERT INTO springmember(id,pass,name,addr,memo,reg_date) VALUES (#{id},#{pass},#{name},#{addr},#{memo},sysdate)
@@ -19,4 +28,5 @@
  	<delete id="deleteData" parameterType="String">
  		DELETE FROM springmember WHERE id=#{id}
  	</delete>
+ 	
  </mapper>

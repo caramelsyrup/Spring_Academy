@@ -1,12 +1,13 @@
 package com.member.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 public interface MemberDAO {
 	// 추가
 	public void dao_insert(String sqlId,MemberDTO member);
 	// 전체보기
-	public List<MemberDTO> dao_list(String sqlId);
+	public List<MemberDTO> dao_list(String sqlId,HashMap<String, String>hm);
 	// 상세보기
 	public MemberDTO dao_findById(String sqlId,String id);
 	// 수정

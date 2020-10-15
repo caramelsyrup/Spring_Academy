@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <!-- mapper에 구체적인 sql문 적기 -->
+  <mapper namespace="com.person.person1">
+  	<select id="listData" resultType="com.person.model.PersonDTO">
+  		SELECT * FROM person
+  		<if test='word == null or field == null'>
+  			ORDER BY id
+  		</if>
+  		<where>
+  			<if test='word != null and (field eq "id".toString())'>
+  				id like '%'||#{word}||'%'	ORDER BY id
+  			</if>
+  			<if test='word != null and (field eq "name".toString())'>
+  				name like '%'||#{word}||'%'		ORDER BY id
+  			</if>
+  		</where>
+  	</select>
+  	<insert id="insertData" parameterType="com.person.model.PersonDTO">
+  		INSERT INTO person(id,password,name,gender,job) VALUES (#{id},#{password},#{name},#{gender},#{job})
+  	</insert>
+  	<select id="viewData" parameterType="String" resultType="com.person.model.PersonDTO">
+  		SELECT * FROM person WHERE id = #{id}
+  	</select>
+  	<update id="updateData" parameterType="com.person.model.PersonDTO">
+  		UPDATE person SET password=#{password},name=#{name},gender=#{gender},job=#{job}	WHERE id=#{id}
+  	</update>
+  	<delete id="deleteData" parameterType="String">
+  		DELETE FROM person WHERE id=#{id}
+  	</delete>
+  	<select id="countData" resultType="String">
+  		SELECT Count(id) FROM person
+  	</select>
+  </mapper>
