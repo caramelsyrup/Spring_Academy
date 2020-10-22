@@ -29,8 +29,7 @@ public class GuestDAOImpl implements GuestDAO{
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
-		
+		mapper.delete(num);
 	}
 
 	@Override
@@ -41,14 +40,12 @@ public class GuestDAOImpl implements GuestDAO{
 
 	@Override
 	public GuestVO findById(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		return mapper.findById(num);
 	}
 
 	@Override
 	public int count(HashMap<String, Object> hm) {
-		// TODO Auto-generated method stub
-		return 0;
+		return mapper.count(hm);
 	}
 
 }

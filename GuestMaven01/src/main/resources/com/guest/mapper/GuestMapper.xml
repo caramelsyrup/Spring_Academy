@@ -3,7 +3,38 @@
  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  <mapper namespace="com.guest.mapper.GuestMapper">
- 	<select id="list" resultType="com.guest.vo.GuestVO" parameterType="HashMap">
- 		SELECT num,writter,content,grade,created,ipaddr FROM guestbook
+ 	
+ 	<sql id="search">
+ 		<where>
+ 			<if test='word != null and (field eq "num".toString())'>
+ 				num LIKE '%${word}%'
+ 			</if>
+ 			<if test='word != null and (field eq "writter".toString())'>
+ 				writter LIKE '%'||#{word}||'%'
+ 			</if>
+ 		</where>
+ 	</sql>
+ 	
+ 	<select id="findById" parameterType="int" resultType="com.guest.vo.GuestVO">
+ 		SELECT * FROM guestbook where num = #{num}
  	</select>
+ 	
+ 	<select id="list" resultType="com.guest.vo.GuestVO" parameterType="HashMap">
+ 		select * from 
+ 			(select aa.*,rownum rn from
+ 				(select * from guestbook<include refid="search"/>
+ 			 		order by num desc)aa
+ 			 where rownum &lt;=#{endRow})
+ 			 where rn >=#{startRow}
+ 	</select>
+ 	
+ 	<select id="count" resultType="int">
+ 		select count(*) from guestbook
+ 		<include refid="search"/>
+ 	</select>
+ 	
+ 	<delete id="delete" parameterType="int">
+ 		DELETE FROM guestbook where num = #{num}
+ 	</delete>
+ 	
  </mapper>

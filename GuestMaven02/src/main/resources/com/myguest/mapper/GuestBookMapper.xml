@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  <mapper namespace="com.myguest.mapper.GuestBookMapper">
+  	<sql id="search">
+  		<where>
+  			<if test='word != null and (field eq "num".toString())'>
+  				num LIKE '%${word}%'
+  			</if>
+  			<if test='word != null and (field eq "writter".toString())'>
+  				writter LIKE '%'||#{word}||'%'
+  			</if>
+  		</where>
+  	</sql>
+  	<!-- 검색 조건 전체 보기 -->
+  	<select id="list" parameterType="HashMap" resultType="com.myguest.model.GuestBookDTO">
+  		SELECT * FROM 
+  			(SELECT aa.*,rownum rn FROM
+  				(SELECT * FROM guestbook <include refid="search"/> ORDER BY num DESC) aa
+  			 WHERE rownum &lt;=#{endRow})	
+  		WHERE rn >=#{startRow}	
+  	</select>
+  	<!-- 검색조건 개수세기 -->
+  	<select id="count" parameterType="HashMap" resultType="int">
+  		SELECT count(*) FROM guestbook <include refid="search"/>
+  	</select>
+  	
+  	<!-- 검색조건 상세보기 -->
+  	<select id="findByNum" parameterType="int" resultType="com.myguest.model.GuestBookDTO">
+  		SELECT * FROM guestbook WHERE num = #{num}
+  	</select>
+  	
+  	<!-- 삭제하기 -->
+  	<delete id="delete" parameterType="int">
+  		DELETE FROM guestbook WHERE num = #{num}
+  	</delete>
+  	
+  </mapper>

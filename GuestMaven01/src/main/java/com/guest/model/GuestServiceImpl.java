@@ -28,8 +28,7 @@ public class GuestServiceImpl implements GuestService {
 
 	@Override
 	public void delete(int num) {
-		// TODO Auto-generated method stub
-		
+		dao.delete(num);
 	}
 
 	@Override
@@ -40,14 +39,13 @@ public class GuestServiceImpl implements GuestService {
 
 	@Override
 	public GuestVO findById(int num) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		return dao.findById(num);
 	}
 
 	@Override
 	public int count(HashMap<String, Object> hm) {
-		// TODO Auto-generated method stub
-		return 0;
+		return dao.count(hm);
 	}
 
 }
