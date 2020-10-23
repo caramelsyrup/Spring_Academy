@@ -7,5 +7,9 @@
  	<select id="login" parameterType="String" resultType="com.myandroid.VO.UserVO" >
  		SELECT * FROM userInfo WHERE userID = #{userID}
  	</select>
+ 	
+ 	<insert id="insert" parameterType="com.myandroid.VO.UserVO">
+ 		INSERT INTO userInfo(userID,password,userName,userAge,userGender,userCity) VALUES (#{userID},#{password},#{userName},#{userAge},#{userGender},#{userCity})
+ 	</insert>
  
  </mapper>

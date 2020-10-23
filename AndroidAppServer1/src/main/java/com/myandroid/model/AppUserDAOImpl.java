@@ -27,9 +27,8 @@ public class AppUserDAOImpl implements AppUserDAO {
 	}
 
 	@Override
-	public void dao_insert(UserVO user) {
-		// TODO Auto-generated method stub
-		
+	public int dao_insert(UserVO user) {
+		return mapper.insert(user);
 	}
 
 	@Override

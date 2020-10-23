@@ -26,8 +26,9 @@ public class AppUserServiceImpl implements AppUserService{
 	}
 
 	@Override
-	public void insert(UserVO user) {
-		// TODO Auto-generated method stub
+	public int insert(UserVO user) {
+		int result = dao.dao_insert(user);
+		return result;
 		
 	}
 

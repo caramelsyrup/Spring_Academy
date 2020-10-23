@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="MemberMaven"/>
 <aop-project name="GuestMaven02"/>
-<aop-project name="review2"/>
+<aop-project name="MemberMaven"/>
 <aop-project name="review4"/>
+<aop-project name="review2"/>
 <aop-project name="demo"/>
 <aop-project name="MemberMaven2"/>
 <aop-project name="PersonMaven1"/>

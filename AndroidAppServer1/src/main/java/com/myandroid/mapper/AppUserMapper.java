@@ -12,7 +12,7 @@ public interface AppUserMapper {
 	// 회원 정보 상세 조회
 	public UserVO findById(String userID);
 	// 회원 추가
-	public void insert(UserVO user);
+	public int insert(UserVO user);
 	// 회원 정보 수정
 	public void update(UserVO user);
 	// 회원 정보 삭제

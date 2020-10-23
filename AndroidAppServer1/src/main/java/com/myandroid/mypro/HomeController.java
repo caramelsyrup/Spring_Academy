@@ -7,10 +7,14 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.google.gson.Gson;
+import com.myandroid.VO.UserVO;
 import com.myandroid.model.AppUserServiceImpl;
 
 /**
@@ -23,18 +27,29 @@ public class HomeController {
 	private AppUserServiceImpl service;
 	
 	/*
-	 * @RequestMapping(value = "/", method = RequestMethod.GET) public String
-	 * home(Model model) { return "login"; }
+	 * @GetMapping("/") public String Home() { return "home"; }
 	 */
 	
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	@PostMapping("login")	// 로그인
 	@ResponseBody
-	public Map<String,Object> login(Model model,String userID,String password) {
-		Map<String,Object> result = new HashMap<String,Object>();
+	public int login(String userID,String password) {
 		int sign = service.login(userID, password);
-		result.put("sign", sign);
-		return result;
+		return sign;
 	}
 	
+	@PostMapping(value = "signUp", produces = "application/json; charset=UTF-8")	// 회원가입
+	@ResponseBody
+	public int signUp(String objJson) {	// Json형식을 String형으로 받기에 매개변수를 String형
+		System.out.println("====회원가입====");
+		int result=0;
+		Gson gson = new Gson();
+		try {
+			UserVO vo = gson.fromJson(objJson, UserVO.class);
+			result = service.insert(vo);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
 	
 }

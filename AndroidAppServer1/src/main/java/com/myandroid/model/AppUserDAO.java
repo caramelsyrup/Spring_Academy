@@ -12,7 +12,7 @@ public interface AppUserDAO {
 	// 회원 정보 상세 조회
 	public UserVO dao_findById(String userID);
 	// 회원 추가
-	public void dao_insert(UserVO user);
+	public int dao_insert(UserVO user);
 	// 회원 정보 수정
 	public void dao_update(UserVO user);
 	// 회원 정보 삭제
