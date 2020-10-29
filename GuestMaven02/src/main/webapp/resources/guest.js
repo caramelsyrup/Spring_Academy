@@ -28,7 +28,7 @@ function getData(pageNum,field,word){
 			// 리스트
 			var listTitle = "";
 			listTitle += "<tr><td>글번호</td><td>작성자</td><td>내용</td><td>등급</td><td>작성일</td><td>주소</td></tr>";
-			$("#listArea thead").html(listTitle);
+			$("#listArea thead").addClass().html(listTitle);
 			
 /*			var listContent ="";
 				$.each(resp.list,function(key,val){
@@ -59,8 +59,9 @@ function getData(pageNum,field,word){
 				listStr += "<td><a href='javascript:void(0);' onclick='delData("+resp.list[i].num+")'>"+"삭제</a></td></tr>";
 			}*/
 		//	$("#listArea").html(listStr);
-		
+			// 해당 영역에 화면 출력.
 			var container = document.querySelector("#listArea tbody");
+			// 함수를 작성하여서, 출력.
 			container.innerHTML=resp.list.map(item=>createHtmlStr(item)).join('').replace(/null/gi,"");
 			
 			// 페이징
