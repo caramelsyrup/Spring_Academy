@@ -28,6 +28,8 @@ public class Hotel {
 	@Embedded
 	private Address address;
 	
+	
+	// 단지 참조만하겠다. SELECT만 하겠다.
 	@OneToMany(mappedBy = "hotel")
 	private List<Review> reviews;
 

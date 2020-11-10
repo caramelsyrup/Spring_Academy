@@ -17,6 +17,7 @@ public class Review {
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	// 1:다의 관계에서 다의 입장.
 	@ManyToOne
 	@JoinColumn(name = "hotel_id")
 	private Hotel hotel;

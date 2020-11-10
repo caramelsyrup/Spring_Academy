@@ -53,6 +53,8 @@ public class UserService {
 	}
 	
 	// 수정하기
+	// 엔터티매니저가 CONTEXT에 먼저 저장후 디비에 들어간다. @Transactional로 인해서.
+	// 더티체킹을 함. 업데이트를 따로 만들지 않음.
 	@Transactional
 	public void update(User us) {
 		

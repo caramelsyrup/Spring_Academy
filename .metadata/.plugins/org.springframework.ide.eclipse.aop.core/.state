@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="Member"/>
-<aop-project name="GuestMaven02"/>
+<aop-project name="11_SpringSecurity"/>
 <aop-project name="MemberMaven"/>
-<aop-project name="review2"/>
+<aop-project name="demo6"/>
 <aop-project name="review4"/>
-<aop-project name="demo"/>
+<aop-project name="review2"/>
 <aop-project name="MemberMaven2"/>
 <aop-project name="PersonMaven1"/>
 <aop-project name="MavenProject"/>
 <aop-project name="springSecurity"/>
 <aop-project name="AndroidAppServer1"/>
 <aop-project name="Mybatis1"/>
-<aop-project name="GuestMaven01"/>
 <aop-project name="demo1"/>
 <aop-project name="demo3"/>
 <aop-project name="review3"/>
